@@ -1,0 +1,9 @@
+__pycache__
+.pytest_cache
+alembic/__pycache__
+alembic/versions/__pycache__
+alembic/versions/5c9ecab1483e_first_commit.py
+dbfiles/__pycache__
+venv
+docker-compose.yml
+Dockerfile

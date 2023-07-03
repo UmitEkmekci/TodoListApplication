@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--Doctype: Html5 oldugunu gosterir ve semantiktir.-->
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <!--Head tanimlayici tag'lari kapsar.-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo Application</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Bütün CSS attribute-value'ları internal biçimde <style> içine yazilmistir.*/
+      .vh-100 {
+        display: flex; /*Bu stil özelliği, bir elemanın esnek bir kutu modeline sahip olmasını sağlar. Elemanın içerisindeki diğer öğeleri esnek bir düzen içerisinde yönetmek için kullanılır. Öğeler yatay veya dikey olarak hizalanabilir ve esneklik sağlayarak genişlik ve yüksekliklerini otomatik olarak ayarlayabilir.*/
+        flex-direction: column; /*Bu stil özelliği, display: flex; ile birlikte kullanıldığında öğelerin dikey bir düzende yer almasını sağlar. Öğeleri yukarıdan aşağıya doğru hizalar. */
+        align-items: center; /* Bu stil özelliği, display: flex; ile birlikte kullanıldığında öğelerin yatay eksende (sol ve sağ) merkezlenmesini sağlar. Öğeleri yatay olarak hizalar ve ortalar.*/
+        justify-content: center; /* Bu stil özelliği, display: flex; ile birlikte kullanıldığında öğelerin dikey eksende (yukarı ve aşağı) merkezlenmesini sağlar. Öğeleri dikey olarak hizalar ve ortalar.*/
+        height: 85vh; /* Bu değer, viewport'un yüksekliğini ifade eder. "vh" (viewport height) birimini kullanarak, viewport'un yüksekliğini yüzde cinsinden ifade eder. 100vh, viewport'un tam yüksekliğini temsil eder. 
+                                        Yani, elemanın yüksekliği, viewport'un yüksekliği ile aynı olur.*/
+      }
+
+      .header {
+        margin-top: 5px;
+      }
+
+      .form-control {
+        overflow-x: auto;
+      }
+
+      .div-scroll,
+      table {
+        padding: 12px;
+        height: 70%;
+        width: 85vh;
+        margin-top: 20px;
+        overflow-y: scroll;
+      }
+
+      .table {
+        table-layout: fixed;
+        width: 100%;
+      }
+
+      .text {
+        /*"word-wrap: break-word"*/
+        word-wrap: break-word;
+      }
+
+      .form-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .form-group .form-control {
+        flex: 1;
+      }
+
+      .form-group .btn {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="vh-100">
+      <h1 class="header">Todo Adding</h1>
+      <form class="row" action="/add" method="post">
+        <div class="form-group">
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="form-control"
+            placeholder="Enter a task here"
+          />
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+
+      <div class="div-scroll">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Todo item</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for todo in todo_list %}
+            <tr>
+              <th scope="row">{{todo.id }}</th>
+              <td class="text">{{ todo.title }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

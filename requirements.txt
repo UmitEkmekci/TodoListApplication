@@ -1,0 +1,12 @@
+fastapi
+sqlalchemy
+sqlalchemy.orm
+uvicorn
+psycopg2
+requests
+starlette
+jinja2
+alembic
+python-multipart
+pytest
+httpx 
