@@ -60,5 +60,12 @@ After entering the item in the input area, the "add" button is clicked.
 
 ![Jpeg-1](https://github.com/UmitEkmekci/TodoListApplication/blob/main/listing.PNG)
 <br/>
-As seen in this image, the item has been added to the list.
+
+
+I regret to say that I could not complete the deployment part of Assignment. I just tried to describe Docker technology below.
+
+Docker is a containerization platform used to easily package and make software applications portable. Containerization brings together all the dependencies and components required to run an application, enabling it to run in different environments. Docker simplifies this containerization process and isolates applications within a container.
+
+One of the key advantages provided by Docker is the seamless ability to run applications in various different environments. Once a Docker container is created, it can be transported identically from development to testing to production environments. This facilitates rapid deployment, scalability, and updates for software.
+
 
